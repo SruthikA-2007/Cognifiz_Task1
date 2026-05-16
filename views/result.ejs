@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f3f4f6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Attractive Card Layout */
+        .card-container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            border-top: 6px solid #10b981; /* Success Green Highlight */
+        }
+
+        .success-icon {
+            width: 70px;
+            height: 70px;
+            background-color: #d1fae5;
+            color: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 20px;
+        }
+
+        .card-container h2 {
+            color: #1f2937;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 24px;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* Inner Details Card */
+        .data-card {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .data-card h3 {
+            font-size: 16px;
+            color: #4b5563;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        .data-list {
+            list-style: none;
+        }
+
+        .data-list li {
+            margin-bottom: 14px;
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            color: #1f2937;
+        }
+
+        .data-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .data-list li span.label {
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .data-list li span.value {
+            font-weight: 600;
+        }
+
+        /* Back to Home Button */
+        .back-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: #3b82f6;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .back-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <!-- Success Icon -->
+        <div class="success-icon">✓</div>
+        
+        <!-- Success Message -->
+        <h2>Form submitted successfully</h2>
+        <p class="subtitle">Thank you! Here are the details you provided.</p>
+
+        <!-- Data Card -->
+        <div class="data-card">
+            <h3>Registration Details</h3>
+            <ul class="data-list">
+                <!-- EJS Variables for displaying submitted form data -->
+                <li><span class="label">Name:</span> <span class="value"><%= student.fullName %></span></li>
+                <li><span class="label">Email:</span> <span class="value"><%= student.email %></span></li>
+                <li><span class="label">Age:</span> <span class="value"><%= student.age %></span></li>
+                <li><span class="label">Course:</span> <span class="value"><%= student.course %></span></li>
+            </ul>
+        </div>
+
+        <!-- Back to Home Button -->
+        <a href="/" class="back-btn">Go Back to Home Page</a>
+    </div>
+
+</body>
+</html>
