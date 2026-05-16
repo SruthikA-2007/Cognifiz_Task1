@@ -1,1 +1,0 @@
-# Cognifiz_Task1
